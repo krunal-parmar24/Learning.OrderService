@@ -1,1 +1,6 @@
-<Solution />
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="Learning.OrderService.API/Learning.OrderService.API.csproj" />
+</Solution>
