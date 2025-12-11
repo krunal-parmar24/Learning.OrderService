@@ -1,4 +1,4 @@
-name: Build, Test, and Deploy to Render
+﻿name: Build, Test, and Deploy to Render
 
 on:
   push:
@@ -97,10 +97,10 @@ jobs:
           echo "Response Body: $BODY"
 
           if [[ $HTTP_CODE =~ ^2[0-9][0-9]$ ]]; then
-            echo "? Deployment triggered successfully!"
+            echo "✅ Deployment triggered successfully!"
             echo "status=success" >> $GITHUB_OUTPUT
           else
-            echo "? Deployment failed with HTTP status: $HTTP_CODE"
+            echo "❌ Deployment failed with HTTP status: $HTTP_CODE"
             echo "status=failed" >> $GITHUB_OUTPUT
             exit 1
           fi
@@ -112,11 +112,11 @@ jobs:
       - name: Verify deployment
         if: steps.deploy.outputs.status == 'success'
         run: |
-          echo "? Deployment verified successfully!"
+          echo "✅ Deployment verified successfully!"
           echo "Service URL: https://learning-orderservice.onrender.com"
 
       - name: Deployment failed notification
         if: steps.deploy.outputs.status == 'failed'
         run: |
-          echo "? Render deployment failed. Please check the webhook URL and API key."
+          echo "❌ Render deployment failed. Please check the webhook URL and API key."
           exit 1
