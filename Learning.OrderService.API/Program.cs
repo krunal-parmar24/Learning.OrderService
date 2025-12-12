@@ -8,6 +8,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Register Infrastructure Layer
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -18,9 +21,6 @@ if (!app.Environment.IsProduction())
 {
     app.UseHttpsRedirection();
 }
-
-// Register Infrastructure Layer
-builder.Services.AddInfrastructureServices(builder.Configuration);
 
 app.UseAuthorization();
 
