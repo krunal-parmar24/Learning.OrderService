@@ -3,4 +3,7 @@
     <File Path="Dockerfile" />
   </Folder>
   <Project Path="Learning.OrderService.API/Learning.OrderService.API.csproj" />
+  <Project Path="Learning.OrderService.Application/Learning.OrderService.Application.csproj" Id="4ff340bf-143b-4d79-abe1-c4a7776b115a" />
+  <Project Path="Learning.OrderService.Domain/Learning.OrderService.Domain.csproj" Id="eda08632-1172-4cf1-b3b2-4ab28aaba8c4" />
+  <Project Path="Learning.OrderService.Infrastructure/Learning.OrderService.Infrastructure.csproj" Id="ca9cf002-c2f7-4888-bce1-10182e37bad9" />
 </Solution>

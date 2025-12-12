@@ -10,6 +10,9 @@ COPY . .
 
 # Restore dependencies
 RUN dotnet restore Learning.OrderService.API/Learning.OrderService.API.csproj
+RUN dotnet restore Learning.OrderService.Infrastructure/Learning.OrderService.Infrastructure.csproj
+RUN dotnet restore Learning.OrderService.Domain/Learning.OrderService.Domain.csproj
+RUN dotnet restore Learning.OrderService.Application/Learning.OrderService.Application.csproj
 
 # Build and publish
 WORKDIR /src/Learning.OrderService.API
