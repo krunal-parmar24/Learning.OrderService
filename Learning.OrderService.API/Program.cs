@@ -1,3 +1,5 @@
+using Learning.OrderService.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +18,9 @@ if (!app.Environment.IsProduction())
 {
     app.UseHttpsRedirection();
 }
+
+// Register Infrastructure Layer
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 app.UseAuthorization();
 
