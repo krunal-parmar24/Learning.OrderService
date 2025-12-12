@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Learning.OrderService.Domain\Learning.OrderService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>
