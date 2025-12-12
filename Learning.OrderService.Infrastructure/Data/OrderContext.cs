@@ -14,5 +14,11 @@ namespace Learning.OrderService.Infrastructure.Data
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("orders");
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
