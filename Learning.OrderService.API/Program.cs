@@ -1,3 +1,4 @@
+using Learning.OrderService.Application;
 using Learning.OrderService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Register Application Layer
+builder.Services.AddApplicationServices();
 
 // Register Infrastructure Layer
 builder.Services.AddInfrastructureServices(builder.Configuration);
