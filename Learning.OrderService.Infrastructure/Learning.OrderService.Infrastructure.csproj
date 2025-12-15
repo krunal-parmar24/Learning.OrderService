@@ -14,10 +14,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Learning.OrderService.Application\Learning.OrderService.Application.csproj" />
     <ProjectReference Include="..\Learning.OrderService.Domain\Learning.OrderService.Domain.csproj" />
   </ItemGroup>
 

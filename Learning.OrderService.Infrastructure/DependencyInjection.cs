@@ -1,4 +1,6 @@
-﻿using Learning.OrderService.Infrastructure.Data;
+﻿using Learning.OrderService.Application.Abstractions.ExternalServices;
+using Learning.OrderService.Infrastructure.Data;
+using Learning.OrderService.Infrastructure.ExternalServices.Products;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,6 +49,17 @@ namespace Learning.OrderService.Infrastructure
                 services.AddDbContext<OrderContext>(options =>
                     options.UseNpgsql(fallbackConnection!));
             }
+
+            services.AddHttpClient<IProductServiceClient, ProductServiceHttpClient>(
+                client =>
+                {
+                    var productServiceBaseUrl = configuration["Services:ProductApiBaseUrl"] ?? string.Empty;
+
+                    if (!string.IsNullOrEmpty(productServiceBaseUrl))
+                    {
+                        client.BaseAddress = new Uri(productServiceBaseUrl);
+                    }
+                });
 
             return services;
         }
